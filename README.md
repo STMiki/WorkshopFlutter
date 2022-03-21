@@ -108,7 +108,7 @@ You can use the one you want, but I will go with the theme one, cause it's more 
 there is already an example of this in the home widget created by flutter, so let's just copy and edit it to fit our need. I think headline 4 is a little too big, so let's go for headline 5.
 
 now let's say I want to put it more to the right with an back image left to it.
-I let you wrap the title [TextField] into a [Row] and let you [download theses images](assets.tar.gz) and extract it.
+I let you wrap the title [TextField] into a [Row] and let you [download theses images](https://github.com/STMiki/WorkshopFlutter/raw/master/assets.tar.gz) and extract it.
 
 ### now let's add them to your project !
 
@@ -150,7 +150,7 @@ in the `dependencies` section and run `flutter pub get`
   sqlite3_flutter_libs: ^0.5.4
 ```
 
-[download this file](lib/database_helper.dart) and you will be good.
+[download theses files](https://github.com/STMiki/WorkshopFlutter/raw/master/storage_file.tar.gz) and you will be good.
 I don't realy want to explain SQL and such so we will use theses.
 
 ## Step 2 - Creating the main logic
