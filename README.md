@@ -33,7 +33,7 @@ For every flutter related action, you can use the `flutter` cli.
 
 to create a flutter app : `flutter create workshop_flutter`
 
-It create a sample app and all nessecary file to to build on all enabled platforms :
+It create a sample app and all nessecary file to build on all enabled platforms :
 - android
 - ios
 - macos
@@ -65,21 +65,21 @@ define a new statefull widget and it's state.
 Like the demo, we will use a [Scafold] widget as a base and a [SafeArea] child. Set a [AppBar] too.
 For now, we only used the `child` property, but now, we want a list of widgets to ask for a `tittle`, `description` and a list of `task`.
 
-### first, let's create these variable in the state class.
+### First, let's create these variable in the state class.
 
-there is plenty of widget that let you do that, but in this case we will just take a [Column]. we could have used a [Stack] or a [Row] if we wanted
+There is plenty of widget that let you do that, but in this case we will just take a [Column]. we could have used a [Stack] or a [Row] if we wanted ([Stack] is a bit special).
 
 For the input, we will use a [TextField] widget, with a [TextEditingController].
 To tell the text controller to update our variable, we will use the `..` operator ([doc](https://dart.dev/guides/language/language-tour#cascade-notation)), because its much more practical.
 we will set the `text` setter of the controller to our var.
 
-**we will do that one more time for our description**
+**We will do that one more time for our description**
 
 Now, let's replace our home widget in `main.dart` by ours.
 
 it's not realy pretty, so let's fix that !
 
-### decoration
+### Decoration
 
 Like I said earlier, everything is a widget, or to be precise, a class.
 
@@ -101,7 +101,7 @@ By default, it added a padding of 8 on all side with a [EdgeInsets].
 Just let it be for now.
 
 We will be adding a style to your title, to make it bigger.
-As you can see, there is no size or font size property in the InputDecoration widget, because its in the style one that the text itself is decorated.
+As you can see, there is no size or font size property in the [InputDecoration] widget, because its in the style one that the text itself is decorated.
 there is two main way to do that, create a [TextStyle] widget, or use a theme.
 You can use the one you want, but I will go with the theme one, cause it's more fun !
 
@@ -110,20 +110,20 @@ there is already an example of this in the home widget created by flutter, so le
 now let's say I want to put it more to the right with an back image left to it.
 I let you wrap the title [TextField] into a [Row] and let you [download theses images](https://github.com/STMiki/WorkshopFlutter/raw/master/assets.tar.gz) and extract it.
 
-### now let's add them to your project !
+### Now let's add them to your project !
 
 You have a [pubspec.yaml](pubspec.yaml)
 in the root of your project, take a look at it and add the images folder to your project assets. You can add image by image or the whole folder. If you do so, end your path with a `/` !
 
 rerun `flutter run` and you are good ! ...or not.
-in doing so you will normaly encounter a error telling you how a [InputDecorator] can't have an unbouded width bla bla bla.
-The cause of that is because you wrapped it inside a [Row]. Two way or correcting it, you set a width to it, or you wrap it under a [Expanded] widget that set it for you !
+in doing so you will normaly encounter a error telling you how a [InputDecoration] can't have an unbouded width bla bla bla.
+The cause of that is because you wrapped it inside a [Row], and it is trying to calculate how many space it has left. Two way or correcting it, you set a width to it, or you wrap it under a [Expanded] or [Flexible] widget to tell it to take the remaining space.
 perform a hot reload and now you are good !
 
 now, let's go back to our image.
 You know the drill by now, just add an [Image] widget and since its a assets, set the image property to an [AssetImage].
 
-Since this page is not supposed to be the home of our application, let's wrap our image  with a [GestureDetector] and use the onTap event. We use the [Navigator api] to go back to our precedent location, our home screen, that we have not created yet.
+Let's wrap our image  with a [GestureDetector] and use the onTap event. We use the [Navigator api] to go back to our precedent location, our home screen, that we have not created yet.
 
 Before that, we need a place to store our tasks and todo, so let's go !
 
@@ -166,7 +166,7 @@ Like copy/paste. it's the same. the async function part is the same too.
 the particularity of the [FutureBuilder] is that it builds your widget with a default value and when your Future has resolved or failled.
 
 The function take the context and a [AsyncSnapshot](https://api.flutter.dev/flutter/widgets/AsyncSnapshot-class.html).
-When you know the type of your data, I prefer hard coding it.
+When you know the type of your data, hard code it. It set the [AsyncSnapshot] type too !
 ```dart
 FutureBuilder<List<String>>(
     initialData: const [],
