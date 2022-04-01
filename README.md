@@ -47,13 +47,15 @@ One folder for each platform has been created. if not, you may need to enable th
 
 You can start your app by running `flutter run`, or select a device by using the -d flag.
 
+You may need to install android studio / xCode for an emulator depending if you are on a computer or a mac.
+
 # First app - todo list
 
 Let's create our first app !
 
 In the current state, the demo app is a counter that increment each time you press the + button.
 
-**everything is explained in the code, so you may want to take a look.**
+**everything is well explained in the code, so you may want to take a look.**
 
 for those of you who are familiar with react state, its exactly the same, flutter rebuild the widget after a new state has been generated.
 
